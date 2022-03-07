@@ -1,3 +1,18 @@
 .App {
   text-align: center;
 }
+
+.articleCard {
+  border-style: solid;
+  border-color: grey;
+  text-align: left;
+}
+
+/* Getting Cards to be spaced out and in grid formation  */
+.ArticleList {
+  display: grid;
+  /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+  /* ^^^if you want more then one per row */
+  grid-gap: 1rem;
+  padding: 1rem;
+}
