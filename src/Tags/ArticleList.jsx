@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { fetchArticles } from "../Fetch/api";
 import ArticleCard from "./ArticleCard";
+// import TopicSelector from "./TopicSelector";
 
 export default function Articles() {
   const [articles, setArticles] = useState([]);
+  // const [topicFilter, setTopicFilter] = useState("All");
+
   useEffect(() => {
     fetchArticles().then((articles) => {
       setArticles(articles);
@@ -12,8 +15,8 @@ export default function Articles() {
   // console.log(articles);
   return (
     <div>
-      <h2>Articles</h2>
       <section className="ArticleList">
+        <h2>All Articles</h2>
         {articles.map((article) => {
           return <ArticleCard key={article.article_id} article={article} />;
         })}
