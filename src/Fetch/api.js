@@ -31,3 +31,11 @@ export const fetchCookingArticles = () => {
     return res.data.articles;
   });
 };
+//////////////hello
+//Fetching individual article
+export const fetchArticle = (article_id) => {
+  return axios.get(`${url}/api/articles/${article_id}`).then((res) => {
+    // console.log(res.data.article);
+    return res.data.article;
+  });
+};
