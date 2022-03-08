@@ -31,11 +31,20 @@ export const fetchCookingArticles = () => {
     return res.data.articles;
   });
 };
-//////////////hello
+
 //Fetching individual article
 export const fetchArticle = (article_id) => {
   return axios.get(`${url}/api/articles/${article_id}`).then((res) => {
     // console.log(res.data.article);
     return res.data.article;
   });
+};
+
+/////Vote incrementor/////
+export const patchVote = (article_id, vote) => {
+  return axios
+    .patch(`${url}/api/articles/${article_id}`, { inc_votes: vote })
+    .then((res) => {
+      return res.data.article;
+    });
 };
