@@ -5,17 +5,19 @@ import { fetchCookingArticles } from "../Fetch/api";
 
 export default function Coding() {
   const [cookingArticles, setCookingArticles] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     fetchCookingArticles().then((cookArticles) => {
       setCookingArticles(cookArticles);
+      setIsLoading(false);
     });
   }, []);
-
+  if (isLoading) return <p>Loading Articles ...</p>;
   return (
     <div>
       <section className="ArticleList">
-        <h2>All Articles</h2>
+        <h2>Cooking Articles</h2>
         {cookingArticles.map((article) => {
           return <ArticleCard key={article.article_id} article={article} />;
         })}

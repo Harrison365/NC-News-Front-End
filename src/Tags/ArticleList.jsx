@@ -5,14 +5,17 @@ import ArticleCard from "./ArticleCard";
 
 export default function Articles() {
   const [articles, setArticles] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   // const [topicFilter, setTopicFilter] = useState("All");
 
   useEffect(() => {
     fetchArticles().then((articles) => {
       setArticles(articles);
+      setIsLoading(false);
     });
   }, []);
   // console.log(articles);
+  if (isLoading) return <p>Loading Articles ...</p>;
   return (
     <div>
       <section className="ArticleList">

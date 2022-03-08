@@ -14,6 +14,8 @@ export const fetchArticles = () => {
   // }
 };
 
+//Could make these cleaner using use state and one function with `template literal`
+
 export const fetchFootballArticles = () => {
   return axios.get(`${url}/api/articles?topic=football`).then((res) => {
     return res.data.articles;
