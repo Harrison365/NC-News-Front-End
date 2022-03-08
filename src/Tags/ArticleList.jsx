@@ -14,7 +14,7 @@ export default function Articles() {
       setIsLoading(false);
     });
   }, []);
-  // console.log(articles);
+  //console.log(articles);
   if (isLoading) return <p>Loading Articles ...</p>;
   return (
     <div>

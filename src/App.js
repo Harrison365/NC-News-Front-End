@@ -6,6 +6,7 @@ import Coding from "./Tags/Coding";
 import Cooking from "./Tags/Cooking";
 import Football from "./Tags/Football";
 import TopicButtons from "./Tags/TopicButtons";
+import IndividualArticle from "./Tags/IndividualArticle";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/coding" element={<Coding />} />
         <Route path="/cooking" element={<Cooking />} />
         <Route path="/football" element={<Football />} />
+        <Route path="/article/:article_id" element={<IndividualArticle />} />
       </Routes>
     </div>
   );
