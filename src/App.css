@@ -16,3 +16,28 @@
   grid-gap: 1rem;
   padding: 1rem;
 }
+
+#articleBody {
+  text-align: justify;
+  padding: 1cm;
+  /* margin-left: 1cm; */
+}
+
+#article_details {
+  margin-left: 1cm;
+  margin-right: 1cm;
+}
+
+.commentList {
+  display: grid;
+  /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+  /* ^^^if you want more then one per row */
+  grid-gap: 0.5cm;
+  padding: 1cm;
+}
+
+.commentCard {
+  border-style: solid;
+  border-color: grey;
+  text-align: left;
+}

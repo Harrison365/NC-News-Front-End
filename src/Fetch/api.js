@@ -48,3 +48,12 @@ export const patchVote = (article_id, vote) => {
       return res.data.article;
     });
 };
+
+//Fetch comments for given article///
+
+export const fetchComments = (article_id) => {
+  return axios.get(`${url}/api/articles/${article_id}/comments`).then((res) => {
+    console.log(res.data.comments);
+    return res.data.comments;
+  });
+};

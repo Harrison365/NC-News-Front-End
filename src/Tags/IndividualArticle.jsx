@@ -1,7 +1,10 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { fetchArticle, patchVote } from "../Fetch/api";
-import Heart from "react-animated-heart";
+import { fetchArticle, patchVote, fetchComments } from "../Fetch/api";
+// import Heart from "react-animated-heart";
+import "../App.css";
+import LikeButton from "./LikeButton";
+import CommentList from "./CommentList";
 
 export default function IndividualArticle(props) {
   const params = useParams(); //grabs parameter from end of string
@@ -10,6 +13,7 @@ export default function IndividualArticle(props) {
   const [isLoading, setIsLoading] = useState(true);
   const [isClick, setClick] = useState(false);
   const [likes, setLikes] = useState(0);
+  const [comments, setComments] = useState([]);
 
   useEffect(() => {
     fetchArticle(params.article_id).then((article) => {
@@ -17,38 +21,30 @@ export default function IndividualArticle(props) {
       setIsLoading(false);
       setLikes(article.votes);
     });
+    fetchComments(params.article_id).then((comments) => {
+      setComments(comments);
+    });
   }, []);
 
-  //   console.log(article);
+  if (isLoading) return <p>Loading Articles ...</p>;
   return (
     <div>
       <h2>{article.title}</h2>
-      by {article.author}, written {article.created_at}
-      <br />
-      <br />
+      <h4 id="article_details">
+        By {article.author}, Written {article.created_at}
+      </h4>
       Likes {likes}:
-      <button
-        onClick={() => {
-          if (!isClick) {
-            setLikes((likes) => {
-              return (likes += 1);
-            });
-            patchVote(params.article_id, 1);
-            setClick(true);
-          } else {
-            setLikes((likes) => {
-              return (likes -= 1);
-            });
-            patchVote(params.article_id, -1);
-            setClick(false);
-          }
-        }}
-      >
-        ❤️
-      </button>
-      <br />
-      <br />
-      <p>{article.body}</p>
+      <LikeButton
+        setClick={setClick}
+        patchVote={patchVote}
+        isClick={isClick}
+        setLikes={setLikes}
+        params={params}
+      />
+      <p id="articleBody">{article.body}</p>
+      <CommentList comments={comments} />
     </div>
   );
 }
+
+//optimistic rendering is when we increase the likes in a hardcoded way but the actual patch will be done the next time the page is rendered (avoiding the need to rerender to update the likes etc. on screen.)

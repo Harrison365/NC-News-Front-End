@@ -7,13 +7,15 @@ import Cooking from "./Tags/Cooking";
 import Football from "./Tags/Football";
 import TopicButtons from "./Tags/TopicButtons";
 import IndividualArticle from "./Tags/IndividualArticle";
+import { Link } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
       <section>
-        {" "}
-        <Banner />
+        <Link to="/">
+          <Banner />
+        </Link>
         {/* Banner Tag */}
         <TopicButtons />
         {/* Navigation buttons */}
