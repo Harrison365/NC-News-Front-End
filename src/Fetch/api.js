@@ -53,7 +53,16 @@ export const patchVote = (article_id, vote) => {
 
 export const fetchComments = (article_id) => {
   return axios.get(`${url}/api/articles/${article_id}/comments`).then((res) => {
-    console.log(res.data.comments);
     return res.data.comments;
   });
+};
+
+//Post comment////
+
+export const postComment = (article_id, requestObject) => {
+  return axios
+    .post(`${url}/api/articles/${article_id}/comments`, requestObject)
+    .then((res) => {
+      return res.data.comments;
+    });
 };

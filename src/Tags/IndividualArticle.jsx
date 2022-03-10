@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { fetchArticle, patchVote, fetchComments } from "../Fetch/api";
+import { fetchArticle, patchVote } from "../Fetch/api";
 // import Heart from "react-animated-heart";
 import "../App.css";
 import LikeButton from "./LikeButton";
@@ -13,16 +13,12 @@ export default function IndividualArticle(props) {
   const [isLoading, setIsLoading] = useState(true);
   const [isClick, setClick] = useState(false);
   const [likes, setLikes] = useState(0);
-  const [comments, setComments] = useState([]);
 
   useEffect(() => {
     fetchArticle(params.article_id).then((article) => {
       setArticle(article);
       setIsLoading(false);
       setLikes(article.votes);
-    });
-    fetchComments(params.article_id).then((comments) => {
-      setComments(comments);
     });
   }, []);
 
@@ -42,7 +38,7 @@ export default function IndividualArticle(props) {
         params={params}
       />
       <p id="articleBody">{article.body}</p>
-      <CommentList comments={comments} />
+      <CommentList article_id={params.article_id} />
     </div>
   );
 }
