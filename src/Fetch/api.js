@@ -2,11 +2,18 @@ import axios from "axios";
 
 const url = "https://nc-news-example-seminar-3-11.herokuapp.com";
 
-export const fetchArticles = () => {
+export const fetchArticles = (sortBy) => {
   // if (topicFilter === "All") {
-  return axios.get(`${url}/api/articles`).then((res) => {
-    return res.data.articles;
-  });
+  return axios
+    .get(`${url}/api/articles`, {
+      params: {
+        sort_by: sortBy,
+      },
+    })
+    .then((res) => {
+      console.log(res.data.articles);
+      return res.data.articles;
+    });
   // } else {
   //   return axios.get(`${url}/api/articles?topic=${topicFilter}`).then((res) => {
   //     return res.data.articles;
@@ -16,20 +23,17 @@ export const fetchArticles = () => {
 
 //Could make these cleaner using use state and one function with `template literal`
 
-export const fetchFootballArticles = () => {
-  return axios.get(`${url}/api/articles?topic=football`).then((res) => {
-    return res.data.articles;
-  });
-};
-export const fetchCodingArticles = () => {
-  return axios.get(`${url}/api/articles?topic=coding`).then((res) => {
-    return res.data.articles;
-  });
-};
-export const fetchCookingArticles = () => {
-  return axios.get(`${url}/api/articles?topic=cooking`).then((res) => {
-    return res.data.articles;
-  });
+export const fetchArticlesByTopic = (topic, sortBy, order) => {
+  return axios
+    .get(`${url}/api/articles?topic=${topic}`, {
+      params: {
+        sort_by: sortBy,
+        order: order,
+      },
+    })
+    .then((res) => {
+      return res.data.articles;
+    });
 };
 
 //Fetching individual article
@@ -53,6 +57,7 @@ export const patchVote = (article_id, vote) => {
 
 export const fetchComments = (article_id) => {
   return axios.get(`${url}/api/articles/${article_id}/comments`).then((res) => {
+    console.log(res.data.comments);
     return res.data.comments;
   });
 };
@@ -65,4 +70,12 @@ export const postComment = (article_id, requestObject) => {
     .then((res) => {
       return res.data.comments;
     });
+};
+
+/// Delete Comment ///
+
+export const deleteComment = (comment_id) => {
+  return axios.delete(`${url}/api/comments/${comment_id}`).then((res) => {
+    return res.data.comments;
+  });
 };

@@ -2,7 +2,7 @@ import React from "react";
 import "../App.css";
 import DeleteComment from "./DeleteComment";
 
-export default function CommentCard({ comment }) {
+export default function CommentCard({ comment, user, setCommentDeleted }) {
   return (
     <div className="commentCard">
       {comment.created_at === "Just Now" ? (
@@ -24,7 +24,12 @@ export default function CommentCard({ comment }) {
       <h6>{comment.body}</h6>
       Likes:{comment.votes}
       <button>❤️</button>
-      <DeleteComment />
+      <DeleteComment
+        comment_id={comment.comment_id}
+        author={comment.author}
+        setCommentDeleted={setCommentDeleted}
+        user={user}
+      />
       {/* fontawesome icons */}
     </div>
   );

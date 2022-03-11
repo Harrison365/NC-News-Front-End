@@ -2,14 +2,15 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Banner from "./Tags/Banner"; //import all tags
 import ArticleList from "./Tags/ArticleList";
-import Coding from "./Tags/Coding";
-import Cooking from "./Tags/Cooking";
-import Football from "./Tags/Football";
+import ArticleTopics from "./Tags/ArticleTopics";
 import TopicButtons from "./Tags/TopicButtons";
 import IndividualArticle from "./Tags/IndividualArticle";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 function App() {
+  const [sortBy, setSortBy] = useState("created_at");
+  const [order, setOrder] = useState("desc");
   return (
     <div className="App">
       <section>
@@ -23,10 +24,28 @@ function App() {
       </section>
 
       <Routes>
-        <Route path="/" element={<ArticleList />} />
-        <Route path="/coding" element={<Coding />} />
-        <Route path="/cooking" element={<Cooking />} />
-        <Route path="/football" element={<Football />} />
+        <Route
+          path="/"
+          element={
+            <ArticleList
+              sortBy={sortBy}
+              setSortBy={setSortBy}
+              order={order}
+              setOrder={setOrder}
+            />
+          }
+        />
+        <Route
+          path="topics/:topic"
+          element={
+            <ArticleTopics
+              sortBy={sortBy}
+              setSortBy={setSortBy}
+              order={order}
+              setOrder={setOrder}
+            />
+          }
+        />
         <Route path="/article/:article_id" element={<IndividualArticle />} />
       </Routes>
     </div>

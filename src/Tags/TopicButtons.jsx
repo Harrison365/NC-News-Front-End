@@ -7,13 +7,13 @@ export default function TopicButtons({ setTopicFilter }) {
       <Link to="/">
         <button>All</button>
       </Link>
-      <Link to="/coding">
+      <Link to="topics/coding">
         <button>Coding</button>
       </Link>
-      <Link to="/cooking">
+      <Link to="topics/cooking">
         <button>Cooking</button>
       </Link>
-      <Link to="/football">
+      <Link to="topics/football">
         <button>Football</button>
       </Link>
     </div>

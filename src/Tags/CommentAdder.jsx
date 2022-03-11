@@ -1,27 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { postComment } from "../Fetch/api";
 
-export default function CommentAdder({ article_id, setComments }) {
+export default function CommentAdder({
+  article_id,
+  setComments,
+  setCommentAdded,
+  user,
+}) {
   const [text, setText] = useState("");
-  const addComment = () => {
-    setComments((comments) => {
-      const currentComments = [...comments];
-      currentComments.unshift({
-        body: text,
-        author: "grumpy19",
-        created_at: "Just Now",
-      });
-      return currentComments;
-    });
-  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // setIsLoading(true);
-    postComment(article_id, { body: text, username: "grumpy19" }).then(() => {
-      // setisLoading(false);
-      addComment();
+    postComment(article_id, { body: text, username: user }).then(() => {
       setText("");
+      setCommentAdded(true);
     });
   };
 
