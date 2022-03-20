@@ -3,7 +3,6 @@ import axios from "axios";
 const url = "https://nc-news-example-seminar-3-11.herokuapp.com";
 
 export const fetchArticles = (sortBy) => {
-  // if (topicFilter === "All") {
   return axios
     .get(`${url}/api/articles`, {
       params: {
@@ -14,11 +13,6 @@ export const fetchArticles = (sortBy) => {
       console.log(res.data.articles);
       return res.data.articles;
     });
-  // } else {
-  //   return axios.get(`${url}/api/articles?topic=${topicFilter}`).then((res) => {
-  //     return res.data.articles;
-  //   });
-  // }
 };
 
 //Could make these cleaner using use state and one function with `template literal`

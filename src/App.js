@@ -7,6 +7,7 @@ import TopicButtons from "./Tags/TopicButtons";
 import IndividualArticle from "./Tags/IndividualArticle";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import ErrorPage from "./Tags/ErrorPage";
 
 function App() {
   const [sortBy, setSortBy] = useState("created_at");
@@ -47,6 +48,7 @@ function App() {
           }
         />
         <Route path="/article/:article_id" element={<IndividualArticle />} />
+        <Route path={"*"} element={<ErrorPage />} />
       </Routes>
     </div>
   );

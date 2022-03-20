@@ -7,9 +7,12 @@ export default function ({ article }) {
   return (
     <Link to={`/article/${article.article_id}`}>
       <div className="articleCard">
-        Title: {article.title} <br />
+        <h3>{article.title} </h3>
         Author: {article.author} <br />
         Topic: {article.topic}
+        <br />
+        Comments: {article.comment_count}
+        <br />
         <br />
       </div>
     </Link>

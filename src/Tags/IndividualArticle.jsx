@@ -13,16 +13,36 @@ export default function IndividualArticle(props) {
   const [isLoading, setIsLoading] = useState(true);
   const [isClick, setClick] = useState(false);
   const [likes, setLikes] = useState(0);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetchArticle(params.article_id).then((article) => {
-      setArticle(article);
-      setIsLoading(false);
-      setLikes(article.votes);
-    });
+    fetchArticle(params.article_id)
+      .then((article) => {
+        setArticle(article);
+        setIsLoading(false);
+        setLikes(article.votes);
+        setError(null);
+      })
+      .catch(
+        ({
+          response: {
+            data: { msg },
+            status,
+          },
+        }) => {
+          setError({ msg, status });
+          setIsLoading(false);
+        }
+      );
   }, []);
 
   if (isLoading) return <p>Loading Articles ...</p>;
+  if (error)
+    return (
+      <h2>
+        {error.status}:{error.msg}
+      </h2>
+    );
   return (
     <div>
       <h2>{article.title}</h2>
