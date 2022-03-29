@@ -15,7 +15,7 @@ export const fetchArticles = (sortBy) => {
     });
 };
 
-//Could make these cleaner using use state and one function with `template literal`
+//Getting Articles by Topic vvv
 
 export const fetchArticlesByTopic = (topic, sortBy, order) => {
   return axios

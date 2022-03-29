@@ -14,7 +14,7 @@ function App() {
   const [order, setOrder] = useState("desc");
   return (
     <div className="App">
-      <section>
+      <section id="topLine">
         <Link to="/">
           <Banner />
         </Link>

@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "../App.css";
 
 export default function TopicButtons({ setTopicFilter }) {
   return (
-    <div>
+    <div id="topicButtons">
       <Link to="/">
         <button>All</button>
       </Link>

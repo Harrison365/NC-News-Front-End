@@ -1,11 +1,12 @@
 import React from "react";
 import ncLogo from "../NC.jpeg";
+import "../App.css";
 
 export default function Banner() {
   return (
-    <div>
-      <h1>NC News</h1>
-      <img src={ncLogo} />
+    <div id="banner">
+      <h1 id="NcTitle">NC News</h1>
+      <img id="NcImage" src={ncLogo} />
     </div>
   );
 }

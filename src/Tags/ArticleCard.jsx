@@ -14,6 +14,7 @@ export default function ({ article }) {
         Comments: {article.comment_count}
         <br />
         <br />
+        {article.created_at}
       </div>
     </Link>
   );

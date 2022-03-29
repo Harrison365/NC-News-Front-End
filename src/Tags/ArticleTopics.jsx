@@ -4,6 +4,7 @@ import { fetchArticlesByTopic } from "../Fetch/api";
 import { useParams } from "react-router-dom";
 import SortBy from "./SortBy";
 import Order from "./Order";
+import "../App.css";
 
 export default function ArticleTopics({ sortBy, setSortBy, order, setOrder }) {
   const [articles, setArticles] = useState([]);
@@ -39,7 +40,7 @@ export default function ArticleTopics({ sortBy, setSortBy, order, setOrder }) {
       </h2>
     );
   return (
-    <div>
+    <div id="sortAndOrder">
       Sort Articles By:
       <SortBy sortBy={sortBy} setSortBy={setSortBy} />
       Order:
