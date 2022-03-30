@@ -3,21 +3,42 @@ import { fetchArticles } from "../Fetch/api";
 import ArticleCard from "./ArticleCard";
 import SortBy from "./SortBy";
 import Order from "./Order";
+import { useParams } from "react-router-dom";
 // import TopicSelector from "./TopicSelector";
 
 export default function Articles({ sortBy, setSortBy, order, setOrder }) {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
   // const [topicFilter, setTopicFilter] = useState("All");
+  const { topic } = useParams();
 
   useEffect(() => {
-    fetchArticles(sortBy, order).then((articles) => {
-      setArticles(articles);
-      setIsLoading(false);
-    });
-  }, [sortBy, order]);
+    fetchArticles(topic, sortBy, order)
+      .then((articles) => {
+        setArticles(articles);
+        setIsLoading(false);
+      })
+      .catch(
+        ({
+          response: {
+            data: { msg },
+            status,
+          },
+        }) => {
+          setError({ msg, status });
+          setIsLoading(false);
+        }
+      );
+  }, [topic, sortBy, order]);
 
   if (isLoading) return <p>Loading Articles ...</p>;
+  if (error)
+    return (
+      <h2>
+        {error.status}:{error.msg}
+      </h2>
+    );
   return (
     <div>
       Sort Articles By:
@@ -25,7 +46,12 @@ export default function Articles({ sortBy, setSortBy, order, setOrder }) {
       Order:
       <Order order={order} setOrder={setOrder} />
       <section className="ArticleList">
-        <h2>All Articles</h2>
+        <h2>
+          {topic
+            ? topic.charAt(0).toUpperCase() + topic.slice(1) + " "
+            : "All "}
+          Articles
+        </h2>
         {articles.map((article) => {
           return <ArticleCard key={article.article_id} article={article} />;
         })}

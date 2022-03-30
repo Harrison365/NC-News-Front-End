@@ -2,7 +2,6 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Banner from "./Tags/Banner"; //import all tags
 import ArticleList from "./Tags/ArticleList";
-import ArticleTopics from "./Tags/ArticleTopics";
 import TopicButtons from "./Tags/TopicButtons";
 import IndividualArticle from "./Tags/IndividualArticle";
 import { Link } from "react-router-dom";
@@ -37,9 +36,9 @@ function App() {
           }
         />
         <Route
-          path="topics/:topic"
+          path="/topics/:topic"
           element={
-            <ArticleTopics
+            <ArticleList
               sortBy={sortBy}
               setSortBy={setSortBy}
               order={order}

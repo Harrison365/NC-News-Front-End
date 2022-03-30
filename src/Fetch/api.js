@@ -2,30 +2,17 @@ import axios from "axios";
 
 const url = "https://nc-news-example-seminar-3-11.herokuapp.com";
 
-export const fetchArticles = (sortBy) => {
+export const fetchArticles = (topic, sortBy, order) => {
   return axios
     .get(`${url}/api/articles`, {
       params: {
-        sort_by: sortBy,
-      },
-    })
-    .then((res) => {
-      console.log(res.data.articles);
-      return res.data.articles;
-    });
-};
-
-//Getting Articles by Topic vvv
-
-export const fetchArticlesByTopic = (topic, sortBy, order) => {
-  return axios
-    .get(`${url}/api/articles?topic=${topic}`, {
-      params: {
+        topic: topic,
         sort_by: sortBy,
         order: order,
       },
     })
     .then((res) => {
+      console.log(res.data.articles);
       return res.data.articles;
     });
 };
