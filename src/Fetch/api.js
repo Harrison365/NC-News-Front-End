@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const url = "https://nc-news-example-seminar-3-11.herokuapp.com";
+// const url = "https://nc-news-example-seminar-3-11.herokuapp.com";
+const url = "https://nc-news-be-hr.herokuapp.com";
 
 export const fetchArticles = (topic, sortBy, order) => {
   return axios
