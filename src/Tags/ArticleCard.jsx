@@ -11,10 +11,12 @@ export default function ({ article }) {
         Author: {article.author} <br />
         Topic: {article.topic}
         <br />
+        Likes: {article.votes}
+        <br />
         Comments: {article.comment_count}
         <br />
         <br />
-        {article.created_at}
+        {/* {article.created_at} */}
       </div>
     </Link>
   );

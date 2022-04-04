@@ -46,7 +46,7 @@ export default function Articles({ sortBy, setSortBy, order, setOrder }) {
       Order:
       <Order order={order} setOrder={setOrder} />
       <section className="ArticleList">
-        <h2>
+        <h2 id="sub-title">
           {topic
             ? topic.charAt(0).toUpperCase() + topic.slice(1) + " "
             : "All "}
