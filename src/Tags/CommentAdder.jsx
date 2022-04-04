@@ -44,7 +44,9 @@ export default function CommentAdder({
           </button>
           {/* ^^^ clears text */}
         </form>
-        <h4 className="commentError">Pleae Enter Text Before Submitting</h4>
+        <h4 className="commentError">
+          Please Enter Text Before Submitting Your Comment
+        </h4>
       </div>
     );
   }
