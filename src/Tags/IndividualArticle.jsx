@@ -48,7 +48,16 @@ export default function IndividualArticle(props) {
       <div id="individualArticle">
         <h2>{article.title}</h2>
         <h4 id="article_details">
-          By {article.author}, Written {article.created_at}
+          by {article.author} ({article.created_at[8]}
+          {article.created_at[9]}-{article.created_at[5]}
+          {article.created_at[6]}-{article.created_at[0]}
+          {article.created_at[1]}
+          {article.created_at[2]}
+          {article.created_at[3]}, {article.created_at[11]}
+          {article.created_at[12]}
+          {article.created_at[13]}
+          {article.created_at[14]}
+          {article.created_at[15]})
         </h4>
         Likes {likes}:
         <LikeButton

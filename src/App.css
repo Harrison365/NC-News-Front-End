@@ -9,6 +9,22 @@
   border-radius: 0.5cm;
   background-color: grey;
   text-align: left;
+  padding-left: 1cm;
+  overflow: hidden;
+}
+
+#articleCardText {
+  float: left;
+  padding-bottom: 0.5cm;
+}
+
+#NcImageCard {
+  border-radius: 20%;
+  height: 100px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-right: 70px;
+  float: right;
 }
 
 a {
