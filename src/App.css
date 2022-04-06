@@ -1,16 +1,18 @@
 .App {
   text-align: center;
-  background-color: rgb(65, 65, 65);
+  background-color: #fff;
 }
 
 .articleCard {
   border-style: solid;
-  border-color: grey;
+  border-color: #187bd1;
   border-radius: 0.5cm;
-  background-color: grey;
+  background-color: #1e88e5;
   text-align: left;
   padding-left: 1cm;
+  padding-right: 1cm;
   overflow: hidden;
+  color: white;
 }
 
 #articleCardText {
@@ -23,28 +25,25 @@
   height: 100px;
   margin-top: 30px;
   margin-bottom: 30px;
-  margin-right: 70px;
+  margin-right: 50px;
   float: right;
 }
 
 a {
-  color: white;
+  color: #187bd1;
   text-decoration: none;
 }
 
-/* Getting Cards to be spaced out and in grid formation  */
 .ArticleList {
   display: grid;
-  /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
-  /* ^^^if you want more then one per row */
   grid-gap: 2rem;
-  padding: 4rem;
+  margin-left: 1cm;
+  margin-right: 1cm;
 }
 
 #articleBody {
   text-align: justify;
   padding: 1cm;
-  /* margin-left: 1cm; */
 }
 
 #article_details {
@@ -54,8 +53,6 @@ a {
 
 .commentList {
   display: grid;
-  /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
-  /* ^^^if you want more then one per row */
   grid-gap: 0.5cm;
   padding: 1cm;
 }
@@ -77,8 +74,8 @@ a {
   border-radius: 20%;
   height: 40px;
   margin-left: 10px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  border-style: solid;
+  border-color: black;
 }
 
 #NcTitle {
@@ -89,7 +86,7 @@ a {
 }
 
 #sub-title {
-  color: white;
+  color: #187bd1;
 }
 
 #individualArticle {
@@ -105,23 +102,3 @@ a {
   margin-left: 8cm;
   margin-right: 8cm;
 }
-
-/* #topicButtons { */
-/* display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  padding: 20px; */
-/* margin-top: 20px; */
-
-/* #banner { */
-/* float: left; */
-/* margin-left: 4rem;
-  /* margin-right: 4rem; */
-/* display: grid;
-  grid-template-columns: 1fr 1fr;
-  float: left;  */
-
-/* #topLine { */
-/* display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  flex: 1;
-  margin-top: 10; */

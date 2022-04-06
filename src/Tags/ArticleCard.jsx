@@ -2,6 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../App.css";
 import ncLogo from "../NC.jpeg";
+import footballImg from "../football.png";
+import codingImg from "../coding.jpeg";
+import cookingImg from "../cooking.jpeg";
 import IndividualArticle from "./IndividualArticle";
 
 export default function ({ article }) {
@@ -17,7 +20,16 @@ export default function ({ article }) {
           <br />
           Comments: {article.comment_count}
         </div>
-        <img src={ncLogo} id="NcImageCard" />
+        <img
+          src={
+            article.topic === "football"
+              ? footballImg
+              : article.topic === "coding"
+              ? codingImg
+              : cookingImg
+          }
+          id="NcImageCard"
+        />
       </div>
     </Link>
   );

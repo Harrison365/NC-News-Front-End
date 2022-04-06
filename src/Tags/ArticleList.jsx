@@ -41,10 +41,12 @@ export default function Articles({ sortBy, setSortBy, order, setOrder }) {
     );
   return (
     <div>
-      Sort Articles By:
-      <SortBy sortBy={sortBy} setSortBy={setSortBy} />
-      Order:
-      <Order order={order} setOrder={setOrder} />
+      <div id="orderSortContainer">
+        Sort Articles By:
+        <SortBy sortBy={sortBy} setSortBy={setSortBy} />
+        Order:
+        <Order order={order} setOrder={setOrder} />
+      </div>
       <section className="ArticleList">
         <h2 id="sub-title">
           {topic
