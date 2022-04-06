@@ -22,8 +22,8 @@ export default function CommentList({ article_id }) {
   return (
     <div>
       <section className="commentList">
-        <h4>Comments:</h4>
-        User:
+        <h4>Comments Section</h4>
+        User
         <select
           onChange={(e) => {
             setUser(e.target.value);

@@ -44,11 +44,13 @@ a {
 #articleBody {
   text-align: justify;
   padding: 1cm;
+  color: white;
 }
 
 #article_details {
   margin-left: 1cm;
   margin-right: 1cm;
+  color: white;
 }
 
 .commentList {
@@ -59,11 +61,33 @@ a {
 
 .commentCard {
   border-style: solid;
-  border-color: grey;
+  border-color: #187bd1;
   text-align: left;
-  background-color: grey;
+  background-color: #1e88e5;
   border-radius: 0.5cm;
   padding: 0.5cm;
+}
+#commentText {
+  float: left;
+}
+
+#commentDeleteButton {
+  float: right;
+  margin-top: 1.2cm;
+  margin-right: 1.2cm;
+}
+
+#individualLikeButton {
+  margin-bottom: 1cm;
+}
+
+h5 {
+  font-size: 15px;
+  color: white;
+}
+h6 {
+  font-size: 15px;
+  color: white;
 }
 
 .commentError {
@@ -91,11 +115,12 @@ a {
 
 #individualArticle {
   border-style: solid;
-  border-color: grey;
+  border-color: #187bd1;
   border-radius: 0.5cm;
-  background-color: grey;
+  background-color: #1e88e5;
   margin-left: 1cm;
   margin-right: 1cm;
+  color: white;
 }
 
 #userChooser {

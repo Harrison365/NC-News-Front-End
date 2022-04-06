@@ -59,15 +59,17 @@ export default function IndividualArticle(props) {
           {article.created_at[14]}
           {article.created_at[15]})
         </h4>
-        Likes {likes}:
-        <LikeButton
-          setClick={setClick}
-          patchVote={patchVote}
-          isClick={isClick}
-          setLikes={setLikes}
-          params={params}
-        />
         <p id="articleBody">{article.body}</p>
+        <div id="individualLikeButton">
+          Likes {likes}:
+          <LikeButton
+            setClick={setClick}
+            patchVote={patchVote}
+            isClick={isClick}
+            setLikes={setLikes}
+            params={params}
+          />
+        </div>
       </div>
       <CommentList article_id={params.article_id} />
     </div>

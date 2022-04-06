@@ -1,15 +1,14 @@
 import React from "react";
 import "../App.css";
+
 import DeleteComment from "./DeleteComment";
 
 export default function CommentCard({ comment, user, setCommentDeleted }) {
   return (
     <div className="commentCard">
-      {comment.created_at === "Just Now" ? (
-        <h5>by {comment.author} (Just Now)</h5>
-      ) : (
+      <div id="commentText">
         <h5>
-          by {comment.author} ({comment.created_at[8]}
+          {comment.author} ({comment.created_at[8]}
           {comment.created_at[9]}-{comment.created_at[5]}
           {comment.created_at[6]}-{comment.created_at[0]}
           {comment.created_at[1]}
@@ -20,10 +19,10 @@ export default function CommentCard({ comment, user, setCommentDeleted }) {
           {comment.created_at[14]}
           {comment.created_at[15]})
         </h5>
-      )}
-      <h6>{comment.body}</h6>
-      Likes:{comment.votes}
-      <button>❤️</button>
+        <h6>{comment.body}</h6>
+      </div>
+      {/* ❤️{comment.votes}
+      <button>❤️</button> Not Functional, no Back End for Deleting Comments*/}
       <DeleteComment
         comment_id={comment.comment_id}
         author={comment.author}

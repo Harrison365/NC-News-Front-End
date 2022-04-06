@@ -1,5 +1,7 @@
 import React from "react";
 import { deleteComment } from "../Fetch/api";
+import { AwesomeButton } from "react-awesome-button";
+import "react-awesome-button/dist/styles.css";
 
 export default function DeleteComment({
   comment_id,
@@ -15,8 +17,10 @@ export default function DeleteComment({
 
   if (author === user) {
     return (
-      <div>
-        Delete Comment:<button onClick={handleDelete}>❌</button>
+      <div id="commentDeleteButton">
+        <AwesomeButton size="small" type="pinterest" onPress={handleDelete}>
+          Delete
+        </AwesomeButton>
       </div>
     );
   } else {

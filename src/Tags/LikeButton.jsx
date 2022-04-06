@@ -1,4 +1,6 @@
 import React from "react";
+import { AwesomeButton } from "react-awesome-button";
+import "react-awesome-button/dist/styles.css";
 
 export default function LikeButton({
   setClick,
@@ -9,8 +11,9 @@ export default function LikeButton({
 }) {
   return (
     <div>
-      <button
-        onClick={() => {
+      <AwesomeButton
+        type="facebook"
+        onPress={() => {
           if (!isClick) {
             setLikes((likes) => {
               return (likes += 1);
@@ -26,8 +29,8 @@ export default function LikeButton({
           }
         }}
       >
-        ❤️
-      </button>
+        Like
+      </AwesomeButton>
     </div>
   );
 }
