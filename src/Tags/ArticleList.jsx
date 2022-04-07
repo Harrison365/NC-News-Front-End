@@ -16,7 +16,6 @@ export default function Articles({ sortBy, setSortBy, order, setOrder }) {
     fetchArticles(topic, sortBy, order)
       .then((articles) => {
         setArticles(articles);
-        console.log(articles);
         setIsLoading(false);
       })
       .catch(

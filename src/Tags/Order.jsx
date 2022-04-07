@@ -5,7 +5,6 @@ export default function Order({ order, setOrder }) {
     <div>
       <select
         onChange={(e) => {
-          console.log(e.target.value);
           setOrder(e.target.value);
         }}
       >

@@ -1,8 +1,8 @@
 import axios from "axios";
 
-// const url = "https://nc-news-example-seminar-3-11.herokuapp.com";
 const url = "https://nc-news-be-hr.herokuapp.com";
 
+//Fetching article lists
 export const fetchArticles = (topic, sortBy, order) => {
   return axios
     .get(`${url}/api/articles`, {
@@ -13,7 +13,6 @@ export const fetchArticles = (topic, sortBy, order) => {
       },
     })
     .then((res) => {
-      console.log(res.data.articles);
       return res.data.articles;
     });
 };
@@ -21,12 +20,11 @@ export const fetchArticles = (topic, sortBy, order) => {
 //Fetching individual article
 export const fetchArticle = (article_id) => {
   return axios.get(`${url}/api/articles/${article_id}`).then((res) => {
-    // console.log(res.data.article);
     return res.data.article;
   });
 };
 
-/////Vote incrementor/////
+//Vote incrementor
 export const patchVote = (article_id, vote) => {
   return axios
     .patch(`${url}/api/articles/${article_id}`, { inc_votes: vote })
@@ -35,17 +33,14 @@ export const patchVote = (article_id, vote) => {
     });
 };
 
-//Fetch comments for given article///
-
+//Fetch comments for given article
 export const fetchComments = (article_id) => {
   return axios.get(`${url}/api/articles/${article_id}/comments`).then((res) => {
-    console.log(res.data.comments);
     return res.data.comments;
   });
 };
 
-//Post comment////
-
+//Post comment
 export const postComment = (article_id, requestObject) => {
   return axios
     .post(`${url}/api/articles/${article_id}/comments`, requestObject)
@@ -54,8 +49,7 @@ export const postComment = (article_id, requestObject) => {
     });
 };
 
-/// Delete Comment ///
-
+//Delete Comment
 export const deleteComment = (comment_id) => {
   return axios.delete(`${url}/api/comments/${comment_id}`).then((res) => {
     return res.data.comments;
