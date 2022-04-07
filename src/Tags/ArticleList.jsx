@@ -10,13 +10,13 @@ export default function Articles({ sortBy, setSortBy, order, setOrder }) {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
-  // const [topicFilter, setTopicFilter] = useState("All");
   const { topic } = useParams();
 
   useEffect(() => {
     fetchArticles(topic, sortBy, order)
       .then((articles) => {
         setArticles(articles);
+        console.log(articles);
         setIsLoading(false);
       })
       .catch(
@@ -38,6 +38,26 @@ export default function Articles({ sortBy, setSortBy, order, setOrder }) {
       <h2>
         {error.status}:{error.msg}
       </h2>
+    );
+  if (articles.length <= 0)
+    return (
+      <div>
+        <div id="orderSortContainer">
+          Sort Articles By:
+          <SortBy sortBy={sortBy} setSortBy={setSortBy} />
+          Order:
+          <Order order={order} setOrder={setOrder} />
+        </div>
+        <section className="ArticleList">
+          <h2 id="sub-title">
+            {topic
+              ? topic.charAt(0).toUpperCase() + topic.slice(1) + " "
+              : "All "}
+            Articles
+          </h2>
+          <h3>Sorry. There Are No Articles For This Topic.</h3>
+        </section>
+      </div>
     );
   return (
     <div>
