@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { fetchArticle, patchVote } from "../Fetch/api";
-// import Heart from "react-animated-heart";
 import "../App.css";
 import LikeButton from "./LikeButton";
 import CommentList from "./CommentList";
@@ -75,5 +74,3 @@ export default function IndividualArticle(props) {
     </div>
   );
 }
-
-//optimistic rendering is when we increase the likes in a hardcoded way but the actual patch will be done the next time the page is rendered (avoiding the need to rerender to update the likes etc. on screen.)

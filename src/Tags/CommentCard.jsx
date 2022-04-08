@@ -21,15 +21,12 @@ export default function CommentCard({ comment, user, setCommentDeleted }) {
         </h5>
         <h6>{comment.body}</h6>
       </div>
-      {/* ❤️{comment.votes}
-      <button>❤️</button> Not Functional, no Back End for Deleting Comments*/}
       <DeleteComment
         comment_id={comment.comment_id}
         author={comment.author}
         setCommentDeleted={setCommentDeleted}
         user={user}
       />
-      {/* fontawesome icons */}
     </div>
   );
 }

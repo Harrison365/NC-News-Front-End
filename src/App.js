@@ -17,9 +17,7 @@ function App() {
         <Link to="/">
           <Banner />
         </Link>
-        {/* Banner Tag */}
         <TopicButtons />
-        {/* Navigation buttons */}
         <br />
       </section>
 

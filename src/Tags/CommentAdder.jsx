@@ -67,7 +67,6 @@ export default function CommentAdder({
         >
           Clear
         </button>
-        {/* ^^^ clears text */}
       </form>
     </div>
   );
