@@ -15,15 +15,16 @@ Also, be sure to check out the Northcoders social media pages.
 (includes link to back end repo)
 
 The data for this site comes from my back-end NC news project hosted here >
-GitHub Repo >
+GitHub Repo > https://github.com/Harrison365/NC-News-Back-End
 
 (specifies the minimum version of Node required to run locally (check your Node version, `node --version` and use the major version that you are on))
 
-node v16.0.0 (this is mine. is this it???)
+node v16.0.0
 
 (how to run the project locally)
 
 - To run the project locally, simply...
 
 1.  Clone this GitHub repo by running 'git clone https://github.com/Harrison365/fe-nc-news.git' in your terminal.
-2.  Once open, run 'npm start'. This will open NC News in your browser.
+2.  npm i
+3.  Once open, run 'npm start'. This will open NC News in your browser.
