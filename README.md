@@ -18,7 +18,7 @@
 
 ## Back-End
 
-- The data for this site comes from my back-end NC news project hosted here > https://nc-news-be-hr.herokuapp.com/api
+- The data for this site comes from my back-end NC news project hosted here > https://nc-news-back-end-zg12.onrender.com/
 
 - GitHub Repo > https://github.com/Harrison365/NC-News-Back-End
 
