@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const url = "https://nc-news-back-end-zg12.onrender.com/";
+const url = "https://nc-news-back-end-zg12.onrender.com";
 
 //Fetching article lists
 export const fetchArticles = (topic, sortBy, order) => {
