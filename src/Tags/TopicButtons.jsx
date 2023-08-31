@@ -28,7 +28,6 @@ export default function TopicButtons({ setTopicFilter }) {
         </AwesomeButton>
       </Link>
       <AwesomeButtonSocial
-        type="external"
         target="_blank"
         href="https://www.facebook.com/northcoders/"
         type="facebook"
@@ -38,7 +37,6 @@ export default function TopicButtons({ setTopicFilter }) {
         Facebook
       </AwesomeButtonSocial>
       <AwesomeButtonSocial
-        type="external"
         target="_blank"
         href="https://twitter.com/northcoders"
         type="twitter"
@@ -48,7 +46,6 @@ export default function TopicButtons({ setTopicFilter }) {
         Twitter
       </AwesomeButtonSocial>
       <AwesomeButtonSocial
-        type="external"
         target="_blank"
         href="https://www.instagram.com/northcoders/"
         type="instagram"

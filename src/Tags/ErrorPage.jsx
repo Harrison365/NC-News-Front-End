@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function () {
+export default function ErrorPage() {
   return (
     <>
       <h3>Sorry. This page doesn't exist :(</h3>

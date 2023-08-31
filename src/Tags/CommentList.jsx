@@ -31,7 +31,7 @@ export default function CommentList({ article_id }) {
           id="userChooser"
         >
           <option value="grumpy19">grumpy19</option>
-          <option value="cooljmessy">cooljmessy</option>]
+          <option value="cooljmessy">cooljmessy</option>
           <option value="jessjelly">jessjelly</option>
         </select>
         <CommentAdder

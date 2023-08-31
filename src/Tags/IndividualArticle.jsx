@@ -33,7 +33,7 @@ export default function IndividualArticle(props) {
           setIsLoading(false);
         }
       );
-  }, []);
+  }, [params.article_id]);
 
   if (isLoading) return <p>Loading Articles ...</p>;
   if (error)
